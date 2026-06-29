@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>移车出库 · Rush Hour 停车场迷宫</title>
+  <meta name="description" content="经典滑块益智游戏：移动挡路的车辆，把红色目标车开出停车场出口。" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1 class="title">移车出库 <span class="subtitle">Rush Hour</span></h1>
+      <p class="tagline">移动挡路的车辆，把 <span class="hl">目标车</span> 开出停车场出口！</p>
+    </header>
+
+    <section class="hud">
+      <div class="hud-item">
+        <span class="hud-label">关卡</span>
+        <span id="levelLabel" class="hud-value">1</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">步数</span>
+        <span id="movesLabel" class="hud-value">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">用时</span>
+        <span id="timeLabel" class="hud-value">00:00</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">最少步数</span>
+        <span id="bestLabel" class="hud-value">—</span>
+      </div>
+    </section>
+
+    <main class="board-wrap">
+      <div id="board" class="board" aria-label="停车场棋盘"></div>
+    </main>
+
+    <section class="controls">
+      <button id="undoBtn" class="btn" title="撤销上一步">↶ 撤销</button>
+      <button id="resetBtn" class="btn" title="重置本关">⟳ 重置</button>
+      <select id="levelSelect" class="btn select" title="选择关卡" aria-label="选择关卡"></select>
+      <button id="prevBtn" class="btn" title="上一关">‹ 上一关</button>
+      <button id="nextBtn" class="btn" title="下一关">下一关 ›</button>
+    </section>
+
+    <footer class="footer">
+      <p>拖动或点击车辆进行移动。横向车只能左右移动，纵向车只能上下移动。</p>
+    </footer>
+  </div>
+
+  <div id="winOverlay" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="win-card">
+      <div class="trophy">🏆</div>
+      <h2>通关成功！</h2>
+      <p id="winPraise" class="win-praise"></p>
+      <p class="win-stats">
+        用 <span id="winMoves" class="hl">0</span> 步，
+        耗时 <span id="winTime" class="hl">00:00</span>
+      </p>
+      <p id="winBest" class="win-best"></p>
+      <div class="win-actions">
+        <button id="replayBtn" class="btn">再玩一次</button>
+        <button id="winNextBtn" class="btn primary">下一关 ›</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/levels.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
