@@ -68,6 +68,118 @@ const LEVELS = [
     ],
   },
 
+  // —— 简单下出口题库（图片导入，插在第 3 关后；目标=黑色警车竖向，出口=底部第 4 列） ——
+  {
+    // 图片题库⑨：参考解 红E上2, 米D右1, 黑X下到底。
+    id: "p015",
+    name: "警车下出口 ①",
+    optimal: 3,
+    exit: { side: "bottom", lane: 3 },
+    cars: [
+      { id: "X", x: 3, y: 0, len: 2, dir: "v" }, // 黑色警车（目标）
+      { id: "A", x: 1, y: 1, len: 2, dir: "h" }, // 黄车
+      { id: "B", x: 1, y: 2, len: 2, dir: "v" }, // 黄竖车
+      { id: "C", x: 1, y: 4, len: 2, dir: "h" }, // 黄车
+      { id: "D", x: 3, y: 4, len: 2, dir: "h" }, // 米色车
+      { id: "E", x: 5, y: 4, len: 2, dir: "v" }, // 红色车
+    ],
+  },
+  {
+    // 图片题库⑩：参考解 黄2上1, 红右2, 黑下到底。
+    id: "p016",
+    name: "警车下出口 ②",
+    optimal: 3,
+    exit: { side: "bottom", lane: 3 },
+    cars: [
+      { id: "X", x: 3, y: 1, len: 2, dir: "v" }, // 黑色警车（目标）
+      { id: "A", x: 2, y: 0, len: 2, dir: "v" }, // 紫色车
+      { id: "B", x: 3, y: 0, len: 2, dir: "h" }, // 黄1
+      { id: "C", x: 4, y: 2, len: 2, dir: "v" }, // 黄2
+      { id: "D", x: 0, y: 2, len: 3, dir: "h" }, // 银色长车
+      { id: "E", x: 2, y: 3, len: 2, dir: "h" }, // 红色车
+      { id: "F", x: 0, y: 3, len: 3, dir: "v" }, // 橙色长车
+      { id: "G", x: 1, y: 3, len: 3, dir: "v" }, // 绿色长车
+    ],
+  },
+  {
+    // 图片题库⑪：参考解 白1上1, 银左3, 黑下到底。
+    id: "p017",
+    name: "警车下出口 ③",
+    optimal: 3,
+    exit: { side: "bottom", lane: 3 },
+    cars: [
+      { id: "X", x: 3, y: 0, len: 2, dir: "v" }, // 黑色警车（目标）
+      { id: "A", x: 2, y: 1, len: 2, dir: "v" }, // 白色救护车1
+      { id: "B", x: 3, y: 2, len: 3, dir: "h" }, // 银色长车
+      { id: "C", x: 1, y: 3, len: 2, dir: "h" }, // 白色救护车2
+      { id: "D", x: 1, y: 4, len: 2, dir: "v" }, // 黄竖车
+      { id: "E", x: 4, y: 3, len: 3, dir: "v" }, // 棕色长车（绿头）
+    ],
+  },
+  {
+    // 图片题库⑫：参考解 红2下2, 白1左2, 黑下到底。
+    id: "p018",
+    name: "警车下出口 ④",
+    optimal: 3,
+    exit: { side: "bottom", lane: 3 },
+    cars: [
+      { id: "X", x: 3, y: 0, len: 2, dir: "v" }, // 黑色警车（目标）
+      { id: "A", x: 2, y: 0, len: 2, dir: "v" }, // 紫色车
+      { id: "B", x: 0, y: 1, len: 2, dir: "h" }, // 暗红横车
+      { id: "C", x: 1, y: 2, len: 2, dir: "v" }, // 暗红竖车
+      { id: "D", x: 2, y: 3, len: 2, dir: "h" }, // 白色救护车1
+      { id: "E", x: 4, y: 3, len: 2, dir: "h" }, // 白色救护车2
+    ],
+  },
+  {
+    // 图片题库⑬：参考解 灰左1, 紫3左2, 黑下到底。
+    id: "p019",
+    name: "警车下出口 ⑤",
+    optimal: 3,
+    exit: { side: "bottom", lane: 3 },
+    cars: [
+      { id: "X", x: 3, y: 0, len: 2, dir: "v" }, // 黑色警车（目标）
+      { id: "A", x: 4, y: 1, len: 2, dir: "h" }, // 黄1
+      { id: "B", x: 2, y: 2, len: 2, dir: "h" }, // 灰色车
+      { id: "C", x: 4, y: 2, len: 2, dir: "h" }, // 紫2
+      { id: "D", x: 3, y: 3, len: 2, dir: "h" }, // 紫3
+      { id: "E", x: 5, y: 3, len: 2, dir: "v" }, // 黄2（竖）
+      { id: "F", x: 1, y: 4, len: 2, dir: "h" }, // 红色车
+    ],
+  },
+  {
+    // 图片题库⑭（连环锁，较难）：参考解 黑上2, 紫2右3, 银上2, 绿灰左2, 黑下到底。
+    id: "p020",
+    name: "警车下出口 ⑥",
+    optimal: 5,
+    exit: { side: "bottom", lane: 3 },
+    cars: [
+      { id: "X", x: 3, y: 2, len: 2, dir: "v" }, // 黑色警车（目标）
+      { id: "A", x: 0, y: 0, len: 3, dir: "v" }, // 橙色长车
+      { id: "B", x: 2, y: 0, len: 2, dir: "v" }, // 紫1
+      { id: "C", x: 1, y: 2, len: 2, dir: "h" }, // 紫2
+      { id: "D", x: 4, y: 1, len: 2, dir: "h" }, // 灰1
+      { id: "E", x: 1, y: 3, len: 3, dir: "v" }, // 银色长车
+      { id: "F", x: 2, y: 4, len: 3, dir: "h" }, // 绿头灰身长车
+    ],
+  },
+  {
+    // 图片题库⑮（4~5 步）：参考解 黄2下1, 橙左2, 绿下3, 紫2右1, 黑下到底。
+    id: "p021",
+    name: "警车下出口 ⑦",
+    optimal: 5,
+    exit: { side: "bottom", lane: 3 },
+    cars: [
+      { id: "X", x: 3, y: 0, len: 2, dir: "v" }, // 黑色警车（目标）
+      { id: "A", x: 1, y: 0, len: 2, dir: "h" }, // 黄1
+      { id: "B", x: 1, y: 1, len: 2, dir: "v" }, // 紫1
+      { id: "C", x: 3, y: 2, len: 2, dir: "h" }, // 紫2
+      { id: "D", x: 5, y: 0, len: 3, dir: "v" }, // 绿色长车
+      { id: "E", x: 2, y: 3, len: 3, dir: "h" }, // 橙色长车
+      { id: "F", x: 1, y: 3, len: 2, dir: "v" }, // 黄2（竖）
+    ],
+  },
+
   {
     // 图片题库⑧（简单，作为下出口入门关）：目标=黑色警车（竖），出口在底部第 4 列。中间 ≫ 箭头为装饰，不是车。
     // 参考解：红下2, 橙左3, 黑下到底。
